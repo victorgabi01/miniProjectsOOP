@@ -2,7 +2,38 @@ from GradiniteMiniProiect.ClaseGradinita.GradinitaPublica import GradinitaPublic
 from GradiniteMiniProiect.ClaseGradinita.PrintColorString import PrintColorString
 #importam si clasa PrintColorString pt a colora scrisul
 class GradinitaPublica25(GradinitaPublica): #clasa care mosteneste clasa GradiPublica
-    #metode
+
+    #vom crea 3 atribute , public, protected, privat
+
+    adresa = None
+    _nume_gradinita = None
+    __director_gradinita = None
+
+    def __init__(self, adresa, nume_gradinita, director_gradinita): #constructor
+        self.adresa = adresa
+        self._nume_gradinita = nume_gradinita
+        self.__director_gradinita = director_gradinita
+
+    @property #intializare getter, setter, deleter pt atributul privat
+    def director_gradinita(self):
+        pass
+
+    @director_gradinita.getter
+    def director_gradinita(self):
+        return self.__director_gradinita
+
+    @director_gradinita.setter
+    def director_gradinita(self, director_nou):
+        self.__director_gradinita = director_nou
+
+    @director_gradinita.deleter
+    def director_gradinita(self):
+        self.__director_gradinita = None
+
+    def descrie(self): #metode unde folosim cele 3 atribute
+        print(f'Gradinita are adresa {self.adresa}, se numeste {self._nume_gradinita} si direcotrul ei este {self.__director_gradinita}')
+
+
     def activitate_practica(self):
         print('Copiii se joaca pe balansoar')
 
@@ -34,20 +65,13 @@ class GradinitaPublica25(GradinitaPublica): #clasa care mosteneste clasa GradiPu
     '''
     ''' 
     { 1 : { 'nume' : 'Matei',  'nume_parinit' : 'Ion si Maria', 'varsta_elev' : 9, 'activitate_preferata' : 'colorat' }, 2 : { 'nume' : 'Roxana', 'nume_parinit' : 'Ionel si Maria', 'varsta_elev' : 10, 'activitate_preferata' : 'pictat' } }
-    
-              
-               
-               
-          
-    
-           
-               
-    
+
      
     '''
+
     def introduceti_informatii_elevi(self):
-        info = eval(input('Introduceti datele despre elev:\n'))#eval preia input-uri si interpreteaza codul, intelge ca info e dictionar, chiar daca nu are date initial, ca si cum ar fi un cod real
-        for elev_cheie, detalii_value in info.items():
+        __info = eval(input('Introduceti datele despre elev:\n'))#eval preia input-uri si interpreteaza codul, intelge ca info e dictionar, chiar daca nu are date initial, ca si cum ar fi un cod real
+        for elev_cheie, detalii_value in __info.items():
             print(f'Elevul numarul {elev_cheie}')
             for date_cheie, date_value in detalii_value.items():
                 print(f'{date_cheie} : {date_value}')
