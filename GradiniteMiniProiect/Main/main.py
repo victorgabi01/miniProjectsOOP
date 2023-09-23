@@ -1,16 +1,25 @@
-# This is a sample Python script.
+from GradiniteMiniProiect.ClaseGradinita.GradinitaPrivata import GradinitaPrivata
+from GradiniteMiniProiect.ClaseGradinita.GradinitaPublica import GradinitaPublica
+from GradiniteMiniProiect.ClaseGradinita.GradinitaPublica25 import GradinitaPublica25
+#am importat fisierele celor doua clase de interes
+if __name__ == '__main__': #lasam asta si codam dupa el
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+    gradinita_privata_1 = GradinitaPrivata() #initializare obiecte
+    #apelare meotde
+    gradinita_privata_1.activitate_practica()
+    gradinita_privata_1.ora_de_somn()
 
+    gradinita_publica_1 = GradinitaPublica()
+    gradinita_publica_1.ora_de_somn()
+    gradinita_publica_1.activitate_practica()
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+    gradinita_publica_25 = GradinitaPublica25()
+    gradinita_publica_25.ora_de_somn()
+    gradinita_publica_25.activitate_practica()
 
+    #obiect pt a testa culoarea scrisului
+    gradinita_publica_25.calcul_buline_rosii()
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+    #apelare metoda introduceti informatii elevi pe obiectul gradinitapublica25
+    gradinita_publica_25.introduceti_informatii_elevi()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
